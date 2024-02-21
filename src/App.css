@@ -1,20 +1,14 @@
-.App {
-  text-align: center;
+.App,
+a {
+  cursor: none;
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
+  background-color: #cfcfcf;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,15 +18,77 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.cursor-outside {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  /* border: 1px solid rgb(231, 131, 131); */
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: 0.3s linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: spin 8s linear infinite;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.text-block-outside {
+  width: 100%;
+  height: 100%;
+  /* background-color: red; */
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.text-block-outside span {
+  color: #3d3d3d;
+  min-width: 10px;
+  position: absolute;
+  transform-origin: 0 75px;
+  font-size: 16px;
+  left: 50%;
+  font-weight: 400px;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  /* background-color: black; */
+}
+.cursor-inside {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  background-color: #fcfcfc;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: 0.2s linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  mix-blend-mode: difference;
+}
+.iconMouse {
+  mix-blend-mode: difference;
+}
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
+/* .App-link:hover ~ .cursor-inside {
+  transform: translate(-50%, -50%) scale(1.2);
+  transition: 0.25s linear;
+  background-color: rgba(231, 131, 131, 0.678);
+  filter: brightness(200%);
+} */
