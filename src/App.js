@@ -97,7 +97,7 @@ function App() {
       cursorOutside.style.display = cursorInside.style.display = 'none';
     }
 
-  }, [x, y, cursorInsideStyle]);
+  }, [x, y, cursorInsideStyle, isMobileDevice]);
   useEffect(() => {
     // Sự kiện thay đổi kích thước cửa sổ
     const handleResize = () => {
