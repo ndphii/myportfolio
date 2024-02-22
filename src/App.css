@@ -1,7 +1,9 @@
-.App,
-a {
-  cursor: none;
+.App {
+  top: 0;
+  left: 0;
+  width: 100vw;
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -17,7 +19,11 @@ a {
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+/* Các quy tắc CSS cho màn hình desktop và laptop */
+.App,
+a {
+  cursor: none;
+}
 .cursor-outside {
   position: absolute;
   width: 150px;
@@ -50,7 +56,6 @@ a {
   transform-origin: 0 75px;
   font-size: 16px;
   left: 50%;
-  font-weight: 400px;
   text-transform: capitalize;
   display: flex;
   justify-content: space-around;
