@@ -1,0 +1,94 @@
+@import url(../asset/fonts/css/general-sans.css);
+
+.cursor-outside {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    /* border: 1px solid rgb(231, 131, 131); */
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: 0.3s linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.text-block-outside {
+    animation: spin 7.5s linear infinite;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.text-block-outside span {
+    color: #313131;
+    min-width: 10px;
+    position: absolute;
+    transform-origin: 0 75px;
+    font-size: 16px;
+    font-family: GeneralSans-Variable;
+    left: 50%;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    /* background-color: black; */
+}
+.div-block-outside {
+    will-change: transform;
+    border-radius: 12px;
+    display: block;
+    opacity: 0; /* Ẩn ban đầu */
+    transform: scale(0); /* Ẩn và thu nhỏ ban đầu */
+    transition:
+        opacity 0.3s linear,
+        transform 0.3s linear;
+}
+.div-block-outside.active {
+    opacity: 1; /* Hiển thị khi có class active */
+    transform: scale(1) rotate(0.001deg); /* Phóng to khi có class active */
+}
+
+.div-block-outside img {
+    max-width: 350px;
+    max-height: 350px;
+    justify-content: center;
+    border-radius: 12px;
+}
+.cursor-inside {
+    z-index: 100;
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    background-color: #fcfcfc;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: 0.15s linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    mix-blend-mode: difference;
+}
+.iconMouse {
+    mix-blend-mode: difference;
+}
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

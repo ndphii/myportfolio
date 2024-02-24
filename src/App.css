@@ -1,3 +1,4 @@
+@import url(./asset/fonts/css/general-sans.css);
 .App {
   top: 0;
   left: 0;
@@ -12,88 +13,39 @@
 .App-header {
   background-color: #cfcfcf;
   min-height: 100vh;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 /* Các quy tắc CSS cho màn hình desktop và laptop */
 .App,
 a {
   cursor: none;
 }
-.cursor-outside {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  /* border: 1px solid rgb(231, 131, 131); */
-  border-radius: 50%;
-  left: 0;
-  top: 0;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
+.list-project {
+  display: block;
+  width: 100vw;
+  padding: 20px;
+}
+.list-project p {
+  border-bottom: 1px solid #1c1d202d;
+  border-top: 1px solid #1c1d202d;
+  font-family: GeneralSans-Semibold;
+  text-transform: uppercase;
   transition: 0.3s linear;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: spin 8s linear infinite;
+  padding: 0;
+  margin: 0;
+  padding: 40px;
+  font-size: 38px;
 }
-.text-block-outside {
-  width: 100%;
-  height: 100%;
-  /* background-color: red; */
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+.list-project a {
+  display: block;
+  text-decoration: none;
+  color: black;
 }
-.text-block-outside span {
-  color: #3d3d3d;
-  min-width: 10px;
-  position: absolute;
-  transform-origin: 0 75px;
-  font-size: 16px;
-  left: 50%;
-  text-transform: capitalize;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  align-content: center;
-  /* background-color: black; */
+.list-project p:hover {
+  opacity: 0.4;
 }
-.cursor-inside {
-  position: absolute;
-  width: 65px;
-  height: 65px;
-  background-color: #fcfcfc;
-  border-radius: 50%;
-  left: 0;
-  top: 0;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: 0.2s linear;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  mix-blend-mode: difference;
-}
-.iconMouse {
-  mix-blend-mode: difference;
-}
-@keyframes spin {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-/* .App-link:hover ~ .cursor-inside {
-  transform: translate(-50%, -50%) scale(1.2);
-  transition: 0.25s linear;
-  background-color: rgba(231, 131, 131, 0.678);
-  filter: brightness(200%);
-} */

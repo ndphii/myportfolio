@@ -1,143 +1,81 @@
-import logo from './logo.svg';
 import iconMouse from "./asset/icon/mouse.svg"
 import iconEyeVisible from './asset/icon/eyevisible.svg'
 import './App.css';
-import React, { useEffect, useState, useRef } from 'react';
-import Test from './componets/test';
-function useMouse() {
-  const [mousePosition, setMousePosition] = useState({
-    x: 0,
-    y: 0
-  });
+import React, { useState, useRef } from 'react';
+import { Banner } from './componets/banner';
+import MyCursor from "./componets/cursor-content";
 
-  useEffect(() => {
-    function handle(e) {
-      setMousePosition({
-        x: e.pageX,
-        y: e.pageY
-      });
-    }
-
-    document.addEventListener("mousemove", handle);
-
-    return () => document.removeEventListener("mousemove", handle);
-  }, []);
-
-  return mousePosition;
-}
-function isMobile() {
-  // Kiểm tra kích thước màn hình
-  if (window.innerWidth > 1024) {
-    // Nếu kích thước nhỏ hơn hoặc bằng 1024px, kiểm tra cảm ứng
-    return false;
-  }
-  else if (window.innerWidth <= 1024) {
-    return 'ontouchstart' in window || navigator.msMaxTouchPoints;
-  }
-  // Nếu kích thước lớn hơn 1024px, không coi là mobile
-  return false;
-}
-
-window.addEventListener("load", (e) => {
-  // thêm đoạn text chạy tròn quanh con chuột
-  const str = " ゜Graphic Design  ゜ UI/UX Design ";
-  const text = document.querySelector(".text-block-outside");
-  for (let i = 0; i < str.length; i++) {
-    let span = document.createElement("span");
-    span.innerHTML = str[i];
-    text.appendChild(span);
-    span.style.transform = `rotate(${11 * i}deg) `;
-  }
-
-});
 
 function App() {
-  const { x, y } = useMouse();
-  const [svgMouse, setSvgMouse] = useState({
-    src: iconMouse,
-  })
   const [isHovered, setIsHovered] = useState(false);
-  const [isMobileDevice, setIsMobileDevice] = useState(isMobile());
-  const [cursorInsideStyle, setCursorInsideStyle] = useState({
-    transform: 'translate(-50%, -50%) scale(1.0)',
-
-  });
-
+  const [svgMouse, setSvgMouse] = useState({ src: iconMouse });
+  const [urlImgIsHover, setUrlImgIsHover] = useState({ src: "" });
   const aRef = useRef(null);
-
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (e) => {
+    const url = e.target.dataset.url;
+    setUrlImgIsHover({ src: url });
     setIsHovered(true);
-    setCursorInsideStyle({
-      transform: 'translate(-50%, -50%) scale(1.4)',
-    });
     setSvgMouse({
       src: iconEyeVisible,
     })
   };
-
   const handleMouseLeave = () => {
+    setUrlImgIsHover({ src: "" });
     setIsHovered(false);
-    setCursorInsideStyle({
-      transform: 'translate(-50%, -50%) scale(1.0)',
-    });
     setSvgMouse({
       src: iconMouse,
     })
   };
-
-  useEffect(() => {
-    const cursorOutside = document.querySelector(".cursor-outside");
-    const cursorInside = document.querySelector(".cursor-inside");
-    if (!isMobileDevice) {
-      if (cursorOutside && cursorInside) {
-        cursorOutside.style.cssText = cursorInside.style.cssText = `left: ${x}px; top: ${y}px;`;
-        cursorInside.style.transform = cursorInsideStyle.transform;
-      }
-    } else {
-      cursorOutside.style.display = cursorInside.style.display = 'none';
-    }
-
-  }, [x, y, cursorInsideStyle, isMobileDevice]);
-  useEffect(() => {
-    // Sự kiện thay đổi kích thước cửa sổ
-    const handleResize = () => {
-      setIsMobileDevice(isMobile());
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup sự kiện khi component unmount
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
   return (
-    <div className="App">
-      <Test />
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="" />
-        <div onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}>
-          {isHovered.toString()}
-        </div>
-        <a
+    <>
+      <MyCursor svgMouse={svgMouse.src} stateHover={isHovered} urlImg={urlImgIsHover.src} />
+      <div className="App">
+        <div className="App-header">
+          <Banner />
+
+          {/* <a
           ref={aRef}
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
+          className="Link"
+          alt="go home"
           rel="noopener noreferrer"
+          data-url="https://dennissnellenberg.com/media/pages/work/aanstekelijk/bef2894a92-1687423090/thumbnail-aanstekelijk.jpg"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-        >link
-        </a>
-        <div className="cursor-outside">
-          <p className="text-block-outside"></p>
-        </div>
-        <div className="cursor-inside">
-          <p className="svg-inside">
-            <img className="iconMouse" src={svgMouse.src} alt="" />
-          </p>
+        >App
+        </a> */}
+          <div className="list-project">
+            <a ref={aRef} href="https://dennissnellenberg.com/" target="_blank" rel="noopener noreferrer">
+              <p data-url="https://dennissnellenberg.com/media/pages/work/aanstekelijk/bef2894a92-1687423090/thumbnail-aanstekelijk.jpg"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}>
+                1. project 1
+              </p>
+            </a>
+            <a ref={aRef} href="https://dennissnellenberg.com/" target="_blank" rel="noopener noreferrer">
+              <p data-url="https://dennissnellenberg.com/media/pages/work/fabric/b0f1607937-1688453092/thumbnail-fabric-darkgray.jpg"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}>
+                2. project 2
+              </p>
+            </a>
+            <a ref={aRef} href="https://dennissnellenberg.com/" target="_blank" rel="noopener noreferrer">
+              <p data-url="https://dennissnellenberg.com/media/pages/work/base-create/15ac739d82-1680179645/thumbnail-base-desktop.jpg"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}>
+                3. project 3
+              </p>
+            </a>
+            <a ref={aRef} href="https://dennissnellenberg.com/" target="_blank" rel="noopener noreferrer">
+              <p data-url="https://dennissnellenberg.com/media/pages/work/avvr/5f20b9a876-1672918357/thumbnail-avvr-v2.jpg"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}>
+                4. project 4
+              </p>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
