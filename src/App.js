@@ -31,7 +31,7 @@ function App() {
       <MyCursor svgMouse={svgMouse.src} stateHover={isHovered} urlImg={urlImgIsHover.src} />
       <div className="App">
         <div className="App-header">
-          <Banner />
+          <div className="banner"><h1>{`Hi! I'm Duc Phi `}<span><Banner /></span></h1></div>
 
           {/* <a
           ref={aRef}

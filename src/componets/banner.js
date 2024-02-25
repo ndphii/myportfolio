@@ -44,17 +44,11 @@ export const Banner = () => {
     }, [delta, tick]);
 
     return (
-        <section className="banner" id="home">
-            <div className="aligh-items-center">
-                <div>
-                    <TrackVisibility>
-                        {({ isVisible }) =>
-                            <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                                <h1>{`Hi! I'm Duc Phi`} <span className="txt-rotate" dataperiod="1000" data-rotate='[ " Graphic Design ", "  Product Design", " UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
-                            </div>}
-                    </TrackVisibility>
-                </div>
-            </div>
-        </section>
+        <TrackVisibility>
+            {({ isVisible }) =>
+                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                    <span alt={index} className="txt-rotate" dataperiod="1000" data-rotate='[ " Graphic Design ", "  Product Design", " UI/UX Designer" ]'><span className="wrap">{text}</span></span>
+                </div>}
+        </TrackVisibility>
     );
 };

@@ -49,3 +49,7 @@ a {
 .list-project p:hover {
   opacity: 0.4;
 }
+.banner h1 {
+  display: ruby-text;
+  justify-content: left;
+}
