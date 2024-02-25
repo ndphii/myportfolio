@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/myportfolio/static/css/main.b2419958.css",
-    "main.js": "/myportfolio/static/js/main.d178a7c5.js",
+    "main.css": "/myportfolio/static/css/main.2f07e49c.css",
+    "main.js": "/myportfolio/static/js/main.8f2b35be.js",
     "static/js/787.1f11dfe9.chunk.js": "/myportfolio/static/js/787.1f11dfe9.chunk.js",
     "static/media/GeneralSans-VariableItalic.ttf": "/myportfolio/static/media/GeneralSans-VariableItalic.37a2c9e4ec944dec5059.ttf",
     "static/media/GeneralSans-Variable.ttf": "/myportfolio/static/media/GeneralSans-Variable.d7facbbe2ed9ae4aae49.ttf",
@@ -45,16 +45,16 @@
     "static/media/GeneralSans-Bold.woff2": "/myportfolio/static/media/GeneralSans-Bold.64b1bf9966a3bbb94f5c.woff2",
     "static/media/GeneralSans-ExtralightItalic.woff2": "/myportfolio/static/media/GeneralSans-ExtralightItalic.3d55e7e4573d13e89567.woff2",
     "static/media/GeneralSans-Extralight.woff2": "/myportfolio/static/media/GeneralSans-Extralight.d6a4332df60f058537bf.woff2",
+    "static/media/mouse-outside.svg": "/myportfolio/static/media/mouse-outside.d65c2ebbe7097c8a7abb.svg",
     "static/media/mouse.svg": "/myportfolio/static/media/mouse.32d728a834a03f4c0b17be3dcb45b9d0.svg",
     "index.html": "/myportfolio/index.html",
-    "static/media/logo.svg": "/myportfolio/static/media/logo.627d12347567f26e1b0855d4e1b918d6.svg",
     "static/media/eyevisible.svg": "/myportfolio/static/media/eyevisible.59e17217b438179f26b6b3b2c3a52cd0.svg",
-    "main.b2419958.css.map": "/myportfolio/static/css/main.b2419958.css.map",
-    "main.d178a7c5.js.map": "/myportfolio/static/js/main.d178a7c5.js.map",
+    "main.2f07e49c.css.map": "/myportfolio/static/css/main.2f07e49c.css.map",
+    "main.8f2b35be.js.map": "/myportfolio/static/js/main.8f2b35be.js.map",
     "787.1f11dfe9.chunk.js.map": "/myportfolio/static/js/787.1f11dfe9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b2419958.css",
-    "static/js/main.d178a7c5.js"
+    "static/css/main.2f07e49c.css",
+    "static/js/main.8f2b35be.js"
   ]
 }
