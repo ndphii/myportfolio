@@ -9,7 +9,7 @@ export const Banner = () => {
     const [index, setIndex] = useState(1);
     const period = 2000;
 
-    const toRotate = useMemo(() => ["Graphic Designer", "Web Designer", "UI/UX Designer"], []);
+    const toRotate = useMemo(() => ["Graphic Designer", "Product Designer", "UI/UX Designer"], []);
 
     const tick = useCallback(() => {
         let i = loopNum % toRotate.length;
@@ -50,7 +50,7 @@ export const Banner = () => {
                     <TrackVisibility>
                         {({ isVisible }) =>
                             <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                                <h1>{`Hi! I'm Duc Phi`} <span className="txt-rotate" dataperiod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
+                                <h1>{`Hi! I'm Duc Phi`} <span className="txt-rotate" dataperiod="1000" data-rotate='[ " Graphic Design ", "  Product Design", " UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
                             </div>}
                     </TrackVisibility>
                 </div>

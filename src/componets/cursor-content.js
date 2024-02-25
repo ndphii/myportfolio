@@ -35,17 +35,7 @@ function useMouse() {
 
     return mousePosition;
 }
-function BlockMouseOutside() {
-    const str = " ゜Graphic Design  ゜ UI/UX Design ";
-    const text = document.querySelector(".text-block-outside");
-    for (let i = 0; i < str.length; i++) {
-        let span = document.createElement("span");
-        span.innerHTML = str[i];
-        text.appendChild(span);
-        span.style.transform = `rotate(${11 * i}deg) `;
-    }
-}
-window.addEventListener("load", () => BlockMouseOutside());
+
 function MyCursor({ svgMouse, stateHover, urlImg }) {
     const [isMobileDevice, setIsMobileDevice] = useState(isMobile());
     const { x, y } = useMouse();

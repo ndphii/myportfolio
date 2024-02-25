@@ -2,46 +2,34 @@
 
 .cursor-outside {
     position: absolute;
-    width: 150px;
-    height: 150px;
-    /* border: 1px solid rgb(231, 131, 131); */
-    border-radius: 50%;
+    width: 165px;
+    height: 165px;
     left: 0;
     top: 0;
     pointer-events: none;
     transform: translate(-50%, -50%);
-    transition: 0.3s linear;
+    transition: 0.45s ease-out;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
 }
 .text-block-outside {
+    background-image: url("../asset/icon/mouse-outside.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
     animation: spin 7.5s linear infinite;
     width: 100%;
     height: 100%;
     left: 50%;
     top: 50%;
     position: fixed;
-    display: flex;
+    display: block;
     justify-content: space-around;
     align-items: flex-start;
 }
-.text-block-outside span {
-    color: #313131;
-    min-width: 10px;
-    position: absolute;
-    transform-origin: 0 75px;
-    font-size: 16px;
-    font-family: GeneralSans-Variable;
-    left: 50%;
-    text-transform: capitalize;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
-    /* background-color: black; */
-}
+
 .div-block-outside {
     will-change: transform;
     border-radius: 12px;
@@ -49,8 +37,7 @@
     opacity: 0; /* Ẩn ban đầu */
     transform: scale(0); /* Ẩn và thu nhỏ ban đầu */
     transition:
-        opacity 0.3s linear,
-        transform 0.3s linear;
+        /* opacity 0.3s linear, */ transform 0.3s linear;
 }
 .div-block-outside.active {
     opacity: 1; /* Hiển thị khi có class active */
@@ -66,8 +53,8 @@
 .cursor-inside {
     z-index: 100;
     position: absolute;
-    width: 65px;
-    height: 65px;
+    width: 70px;
+    height: 70px;
     background-color: #fcfcfc;
     border-radius: 50%;
     left: 0;
@@ -86,9 +73,9 @@
 }
 @keyframes spin {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(360deg);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg);
+        transform: translate(-50%, -50%) rotate(0deg);
     }
 }
